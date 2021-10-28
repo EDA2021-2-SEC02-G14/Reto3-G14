@@ -63,10 +63,6 @@ while True:
         print("Cargando información de los archivos ....")
         controller.loadData(cont, UFOfile)
         print('UFOS cargados: ' + str(controller.UFOSize(cont)))
-        print('Altura del arbol: ' + str(controller.indexHeight(cont)))
-        print('Elementos en el arbol: ' + str(controller.indexSize(cont)))
-        print('Menor Llave: ' + str(controller.minKey(cont)))
-        print('Mayor Llave: ' + str(controller.maxKey(cont)))
 
     else:
         sys.exit(0)

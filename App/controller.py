@@ -35,7 +35,7 @@ def init():
     """
     Llama la funcion de inicializacion  del modelo.
     """
-    analyzer = model.newCatalog()
+    analyzer = model.newAnalyzer()
     return analyzer
 
 # Funciones para la carga de datos
@@ -59,4 +59,4 @@ def UFOSize(analyzer):
     """
     Numero de UFO's leidos
     """
-    return model.crimesSize(analyzer)
+    return model.UFOSize(analyzer)
