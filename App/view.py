@@ -36,8 +36,13 @@ operación solicitada
 
 def printMenu():
     print("Bienvenido")
-    print("1- Cargar información en el catálogo")
-    print("2- ")
+    print("1- Inicializar analizador")
+    print("2- Cargar información en el catálogo")
+    print("3- Avistamientos por ciudad")
+    print("4- Avistamientos por duración")
+    print("5- Avistamientos en hora determinada")
+    print("6- Avistamientos en cierta fecha")
+    print("7- Avistamientos según la zona")
 
 catalog = None
 
@@ -48,10 +53,20 @@ while True:
     printMenu()
     inputs = input('Seleccione una opción para continuar\n')
     if int(inputs[0]) == 1:
-        print("Cargando información de los archivos ....")
+        print("\nInicializando..... :3")
+        cont = controller.init()
 
     elif int(inputs[0]) == 2:
-        pass
+         print("Cargando información de los archivos ....")
+
+    elif int(inputs[0]) ==3: 
+        ciudad = input("Avistamiento de OVNI en la ciudad: ")
+        cantidad = controller.getSizeCiudades(cont)
+        resultado = controller.getAvisCiudad(ciudad, cont)
+        top = controller.getTopCiudades() 
+        print("\nHay un total de " + str(cantidad) + "diferentes ciudades con avistamientos ")
+        print("El top 5 de ciudades  con mayores avsitamientos son: ")
+
 
     else:
         sys.exit(0)
