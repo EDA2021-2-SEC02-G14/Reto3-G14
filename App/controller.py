@@ -33,6 +33,23 @@ El controlador se encarga de mediar entre la vista y el modelo.
 
 # Funciones para la carga de datos
 
+def loadData(analyzer, UFOfile):
+    """
+    Carga los datos de los archivos CSV en el modelo
+    """
+    ufofile = cf.data_dir + UFOfile
+    input_file = csv.DictReader(open(ufofile, encoding="utf-8"),
+                                delimiter=",")
+    for ufo in input_file:
+        model.addCrime(analyzer, ufo)
+    return analyzer
+
 # Funciones de ordenamiento
 
 # Funciones de consulta sobre el catálogo
+
+def UFOSize(analyzer):
+    """
+    Numero de UFO's leidos
+    """
+    return model.crimesSize(analyzer)

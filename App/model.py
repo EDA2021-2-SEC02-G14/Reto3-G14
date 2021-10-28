@@ -39,11 +39,20 @@ los mismos.
 
 # Construccion de modelos
 
+
+
 # Funciones para agregar informacion al catalogo
+
 
 # Funciones para creacion de datos
 
 # Funciones de consulta
+
+def crimesSize(analyzer):
+    """
+    Número de ufos
+    """
+    return lt.size(analyzer['datetime'])
 
 # Funciones utilizadas para comparar elementos dentro de una lista
 
