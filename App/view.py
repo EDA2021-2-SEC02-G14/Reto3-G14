@@ -37,9 +37,19 @@ operación solicitada
 
 def printMenu():
     print("Bienvenido")
+<<<<<<< HEAD
     print("1- Inicializar Analizador")
     print("2- Cargar información en el catálogo")
     print("2- ")
+=======
+    print("1- Inicializar analizador")
+    print("2- Cargar información en el catálogo")
+    print("3- Avistamientos por ciudad")
+    print("4- Avistamientos por duración")
+    print("5- Avistamientos en hora determinada")
+    print("6- Avistamientos en cierta fecha")
+    print("7- Avistamientos según la zona")
+>>>>>>> a244b7296989e9d006b64badb94f129bf28a87ef
 
 catalog = None
 
@@ -50,6 +60,7 @@ while True:
     printMenu()
     inputs = input('Seleccione una opción para continuar\n')
     if int(inputs[0]) == 1:
+<<<<<<< HEAD
         print("\nInicializando....")
         # cont es el controlador que se usará de acá en adelante
         cont = controller.init()
@@ -63,6 +74,22 @@ while True:
         print('Elementos en el arbol: ' + str(controller.indexSize(cont)))
         print('Menor Llave: ' + str(controller.minKey(cont)))
         print('Mayor Llave: ' + str(controller.maxKey(cont)))
+=======
+        print("\nInicializando..... :3")
+        cont = controller.init()
+
+    elif int(inputs[0]) == 2:
+         print("Cargando información de los archivos ....")
+
+    elif int(inputs[0]) ==3: 
+        ciudad = input("Avistamiento de OVNI en la ciudad: ")
+        cantidad = controller.getSizeCiudades(cont)
+        resultado = controller.getAvisCiudad(ciudad, cont)
+        top = controller.getTopCiudades() 
+        print("\nHay un total de " + str(cantidad) + "diferentes ciudades con avistamientos ")
+        print("El top 5 de ciudades  con mayores avsitamientos son: ")
+
+>>>>>>> a244b7296989e9d006b64badb94f129bf28a87ef
 
     else:
         sys.exit(0)

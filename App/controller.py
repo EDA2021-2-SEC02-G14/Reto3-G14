@@ -31,6 +31,13 @@ El controlador se encarga de mediar entre la vista y el modelo.
 
 # Inicialización del Catálogo de libros
 
+def init():
+    """
+    Llama la funcion de inicializacion  del modelo.
+    """
+    analyzer = model.newCatalog()
+    return analyzer
+
 # Funciones para la carga de datos
 
 def loadData(analyzer, UFOfile):
@@ -48,8 +55,16 @@ def loadData(analyzer, UFOfile):
 
 # Funciones de consulta sobre el catálogo
 
+<<<<<<< HEAD
 def UFOSize(analyzer):
     """
     Numero de UFO's leidos
     """
     return model.crimesSize(analyzer)
+=======
+def getSizeCiudades(catalog):
+    """
+    Numero de ciudades leidas
+    """
+    return model.ciudadesSize(catalog)
+>>>>>>> a244b7296989e9d006b64badb94f129bf28a87ef
