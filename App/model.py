@@ -84,7 +84,7 @@ def updateDateIndex(map, ufo):
     addDateIndex(datentry, ufo)
     return map
 
-def try(crime):
+def newDataEntry(crime):
     """
     Crea una entrada en el indice por fechas, es decir en el arbol
     binario.
