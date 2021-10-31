@@ -58,11 +58,17 @@ while True:
         # cont es el controlador que se usará de acá en adelante
         cont = controller.init()
         
-
     elif int(inputs[0]) == 2:
         print("Cargando información de los archivos ....")
         controller.loadData(cont, UFOfile)
         print('UFOS cargados: ' + str(controller.UFOSize(cont)))
+
+    elif int(inputs[0]) == 3:
+        print("========== Req No. 1 Inputs ==========")
+        city =str(input ("UFO Sightings in the city of: "))
+        controller.loadData(cont, UFOfile)
+        print(controller.loadData(cont,UFOfile))
+
 
     else:
         sys.exit(0)
