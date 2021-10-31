@@ -44,7 +44,7 @@ los mismos.
 def newAnalyzer():
     """ Inicializa el analizador
 
-    Crea una lista vacia para guardar todos los crimenes
+    Crea una lista vacia para guardar todos los ufos
     Se crean indices (Maps) por los siguientes criterios:
     -Fechas
 
@@ -61,7 +61,7 @@ def newAnalyzer():
 
 # Funciones para agregar informacion al catalogo
 
-def addCrime(analyzer, ufo):
+def addUFO(analyzer, ufo):
     """
     """
     lt.addLast(analyzer['datetime'], ufo)
@@ -69,22 +69,22 @@ def addCrime(analyzer, ufo):
     return analyzer
 
 
-def updateDateIndex(map, crime):
+def updateDateIndex(map, ufo):
     """
 
     """
-    occurreddate = crime['datetime']
+    occurreddate = ufo['datetime']
     ufosdate = datetime.datetime.strptime(occurreddate, '%Y-%m-%d %H:%M:%S')
     entry = om.get(map, ufosdate.date())
     if entry is None:
-        datentry = newDataEntry(crime)
+        datentry = newDataEntry(ufo)
         om.put(map, ufosdate.date(), datentry)
     else:
         datentry = me.getValue(entry)
-    addDateIndex(datentry, crime)
+    addDateIndex(datentry, ufo)
     return map
 
-def newDataEntry(crime):
+def try(crime):
     """
     Crea una entrada en el indice por fechas, es decir en el arbol
     binario.
