@@ -64,6 +64,12 @@ while True:
         controller.loadData(cont, UFOfile)
         print('UFOS cargados: ' + str(controller.UFOSize(cont)))
 
+    elif int(inputs[0]) == 3:
+            print("Cargando información de los archivos ....")
+            controller.loadData(cont, UFOfile)
+            print(cont["dateIndex"])
+
+
     else:
         sys.exit(0)
 sys.exit(0)

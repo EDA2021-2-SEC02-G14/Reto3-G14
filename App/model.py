@@ -51,7 +51,7 @@ def newAnalyzer():
     Retorna el analizador inicializado.
     """
     analyzer = {'datetime': None,
-                'dateIndex': None
+                'dateIndex': None,
                 }
 
     analyzer['datetime'] = lt.newList('SINGLE_LINKED', compareIds)
@@ -69,19 +69,22 @@ def addCrime(analyzer, ufo):
     return analyzer
 
 
-def updateDateIndex(map, crime):
+def updateDateIndex(map, ufo):
     """
 
     """
-    occurreddate = crime['datetime']
+    occurreddate = ufo['datetime']
     ufosdate = datetime.datetime.strptime(occurreddate, '%Y-%m-%d %H:%M:%S')
     entry = om.get(map, ufosdate.date())
     if entry is None:
-        datentry = newDataEntry(crime)
-        om.put(map, ufosdate.date(), datentry)
+        bucket=[]
+        bucket.append(ufo)
+        om.put(map, ufosdate.date(), bucket)
     else:
-        datentry = me.getValue(entry)
-    addDateIndex(datentry, crime)
+        bucket=me.getValue(entry)
+        bucket.append(ufo)
+        om.put(map, ufosdate.date(), bucket)
+
     return map
 
 def newDataEntry(crime):
